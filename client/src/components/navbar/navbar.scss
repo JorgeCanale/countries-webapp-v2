@@ -1,0 +1,11 @@
+$main-color: rgb(39, 39, 39);
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+    position:absolute;
+    width: 100%;
+    background-color: $main-color;
+
+}

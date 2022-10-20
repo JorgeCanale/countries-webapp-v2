@@ -1,0 +1,47 @@
+.formContainer{
+  position: absolute;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  background-image:url("../../assets/maybe-actvity-background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  form{
+    background-image: url("../../assets/form-papire.png.png");
+    background-size: 600px 600px;
+    background-repeat: no-repeat;
+    background-position:370px 50px;
+    padding-top: 160px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+  }
+  
+  datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 193px;
+    option {
+      writing-mode:horizontal-tb;
+      }
+
+  }
+
+  input{
+    width: 200px;
+    margin: 0;
+  }
+
+  button{
+    align-self: center;
+  }
+
+}
+  
