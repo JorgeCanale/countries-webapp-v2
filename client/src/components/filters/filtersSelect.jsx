@@ -98,9 +98,9 @@ export const FilterSelector= ()=>{
 
             <select onChange={e => handleActivities(e)}>
                 <option>Activities</option>
-                {activities.length > 0 ? activities?.map(activity =>{
+                {activities && activities?.map(activity =>{
                   return (<option value={activity.name}>{activity.name}</option>)
-                }) : <option>-</option>}
+                })}
             </select>
 
             <button onClick={handleClick}>Refresh</button>
