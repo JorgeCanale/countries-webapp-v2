@@ -10,7 +10,7 @@ export const FilterSelector= ()=>{
     const activities = useSelector(state => state.activities.activities)
     const dispatch = useDispatch()
 
-    console.log(activities)
+    console.log('Activities -----> ', activities)
     function handleChange(e){
         e.preventDefault()
         if(e.target.value === "Population") {

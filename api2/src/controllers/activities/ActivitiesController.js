@@ -3,22 +3,13 @@ const {Activities,Country} = require("../../db")
 const getAllActivities = async() =>{
 
 try{    
-    let activityArray = []
     const allActivities = await Activities.findAll()
-    if(typeof allActivities === "object") activityArray.push(allActivities)
+    if(typeof allActivities === "object")
 
     if(allActivities !== undefined && allActivities.length !== 0){
-
-        if(activityArray.length > 0){
-            return activityArray
-        }else{
-            return allActivities
+        return allActivities} else{
+            return undefined
         }
-    
-    }
-
-        return undefined
-
     }catch(error){
         return error
     }
