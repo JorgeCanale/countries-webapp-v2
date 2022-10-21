@@ -4,35 +4,35 @@ import { GetAllCountries,GetOneCountry,FilterCountries, FilteredByAlphabeticalOr
 
 export const getCountries = () => {
     return async dispatch =>{
-        const countries = (await axios.get("http://localhost:3001/countries")).data
+        const countries = (await axios.get(`/countries`)).data
         dispatch(GetAllCountries(countries))
     }
 }
 
 export const countryByName = (name) => {
     return async dispatch =>{
-        const Country = (await axios.get(`http://localhost:3001/countries/country/${name}`)).data
+        const Country = (await axios.get(`/countries/country/${name}`)).data
         dispatch(GetOneCountry(Country))
     }
 }
 
 export const getFilterByContinents = (continent) => {
     return async dispatch =>{
-        const filtered = (await axios.get(`http://localhost:3001/filters/continents/${continent}`)).data
+        const filtered = (await axios.get(`/filters/continents/${continent}`)).data
         dispatch(FilterCountries(filtered))
     }
 }
 
 export const getFilterByAlphabeticalOrder = (order) => {
     return async dispatch =>{
-        const filtered = (await axios.get(`http://localhost:3001/filters/alphabetical/${order}`)).data
+        const filtered = (await axios.get(`/filters/alphabetical/${order}`)).data
         dispatch(FilterCountries(filtered))
     }
 }
 
 export const getFilterByPopulation = (order) => {
     return async dispatch =>{
-        const filtered = (await axios.get(`http://localhost:3001/filters/population/${order}`)).data
+        const filtered = (await axios.get(`/filters/population/${order}`)).data
         dispatch(FilterCountries(filtered))
     }
 }
