@@ -98,7 +98,7 @@ export const FilterSelector= ()=>{
 
             <select onChange={e => handleActivities(e)}>
                 <option>Activities</option>
-                {activities !== undefined ? activities?.map(activity =>{
+                {activities !== undefined && activities.length > 0 ? activities?.map(activity =>{
                   return (<option value={activity.name}>{activity.name}</option>)
                 }): <option>-</option>}
             </select>
