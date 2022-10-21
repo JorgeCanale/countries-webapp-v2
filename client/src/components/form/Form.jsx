@@ -68,8 +68,8 @@ export const ActivityForm = () =>{
                         )
                     })}
                 </select>
+            <button type="submit">creat activity</button>
         </form>
-        <button type="submit">crear actividad</button>
         </div>
     )
 }

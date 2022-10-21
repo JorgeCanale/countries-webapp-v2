@@ -5,7 +5,7 @@ import { GetAllActivities } from "../slices/activitiesSlice";
 
 export const getAllActivities = ()=>{
     return async dispatch =>{
-        const activities = (await axios.get(`/activities/`)).data
+        const activities = (await axios.get(`/activities`)).data
         dispatch(GetAllActivities(activities))
     }
 }

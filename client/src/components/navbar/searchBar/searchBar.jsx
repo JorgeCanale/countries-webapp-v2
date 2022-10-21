@@ -11,15 +11,12 @@ export const SearchBar =()=>{
     const countryDetail = useSelector(state=> state.countries.Country)
     const dispatch = useDispatch()
 
-    console.log('country detail ---->',countryDetail.name)
-
-
 
     const onHooverButton = ()=>{
         if(country?.length > 0){dispatch(countryByName(country))}
     }
 
-    console.log(country)
+
     return (
         <div className="search">
             <input value={country} onChange={e => setCountry(e.target.value)} type="search"  />

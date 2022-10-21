@@ -7,13 +7,13 @@ import "./filters.scss"
 
 export const FilterSelector= ()=>{
     const [combinadeFilters, setCombinadeFilters] = useState(false)
-    const activies = useSelector(state => state.activities.activities)
+    const activities = useSelector(state => state.activities.activities)
     const dispatch = useDispatch()
 
     function handleChange(e){
         e.preventDefault()
         if(e.target.value === "Population") {
-                console.log("no pasa nada");
+                
         }else if(e.target.value === "Ascendente"){ 
             if(combinadeFilters){
                 dispatch(filteredByPopulation("asc"))
@@ -51,7 +51,7 @@ export const FilterSelector= ()=>{
     function handleContinetsFilter(e){
         e.preventDefault()
         if(e.target.value !== "Continents"){
-            console.log(e.target.value)
+            
         setCombinadeFilters(true)
         dispatch(getFilterByContinents(e.target.value))
         }else{
@@ -98,7 +98,7 @@ export const FilterSelector= ()=>{
 
             <select onChange={e => handleActivities(e)}>
                 <option>Activities</option>
-                {activies.lenght > 0 ? activies?.map(activity =>{
+                {activities.length > 0 ? activities.map(activity =>{
                   return (<option value={activity.name}>{activity.name}</option>)
                 }) : <option>-</option>}
             </select>

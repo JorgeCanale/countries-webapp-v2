@@ -1,10 +1,8 @@
-const { where } = require("sequelize")
+
 const {Country , Activities} = require("../../db")
 
 
 const countriesByContinents = async(continent) =>{
-        let superVaribale = 'asaaa'
-        console.log(superVaribale)
         let byContinent = await Country.findAll({
             where:{
                 continents: continent

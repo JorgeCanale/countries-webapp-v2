@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: row;
     padding-left: 1000px;
-    justify-content: space-between;
-
+    column-gap: 20px;
+    padding-top: 20px;
     input{
         border-radius: 11px;
 
@@ -18,8 +18,8 @@
 
 
 
-button:hover{
-    box-shadow: 1px 1px 1px 1px(rgba(161, 160, 160, 0.788));
+    button:hover{
+        box-shadow: 1px 1px 1px 1px(rgba(161, 160, 160, 0.788));
 }
 }
 
