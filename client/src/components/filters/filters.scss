@@ -1,5 +1,6 @@
 .filters{
-    position:absolute;
-    padding-top: 100px;
-
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
 }

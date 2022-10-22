@@ -5,9 +5,10 @@ const getAllActivities = async() =>{
 try{    
     const allActivities = await Activities.findAll()
     if(typeof allActivities === "object")
-
+    
     if(allActivities !== undefined && allActivities.length !== 0){
-        return allActivities} else{
+        return allActivities
+    } else{
             return undefined
         }
     }catch(error){
