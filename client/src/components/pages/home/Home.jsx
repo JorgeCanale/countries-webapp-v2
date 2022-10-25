@@ -3,20 +3,22 @@ import './Home.scss'
 import { useSelector, useDispatch } from "react-redux";
 import { Cards } from "../../countriesCards/Cards";
 import { FilterSelector } from "../../filters/filtersSelect";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCountries } from "../../../redux/actions/countriesActions";
 import { getAllActivities } from "../../../redux/actions/activitiesAction";
 import { useLocation } from "react-router-dom";
 import {NavBar} from "../../navbar/navbar"
+import { Loading } from "../../Loaders/Loading";
 
 
 export const Home = () =>{
-    
     const Countries = useSelector(store => store.countries.countries)
     const dispatch = useDispatch()
+    const [loading,setLoading] = useState(true)
 
     useEffect(()=>{
         dispatch(getCountries())
+        .then(setLoading(false))
         dispatch(getAllActivities())
     },[])
 
@@ -25,8 +27,9 @@ export const Home = () =>{
     return(
 
         <div className="HomeContainer">
-            <div className="HomeBackground"></div>
+            <div className="HomeBackground" />
             {path.pathname !== "/landing" ? <NavBar/>: <></>}
+            {loading && <Loading />}
             <FilterSelector />
             <Cards countries={Countries}/>
         </div>

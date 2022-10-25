@@ -5,8 +5,18 @@ $main-color: rgb(39, 39, 39);
     flex-direction: row;
     column-gap: 30px;
     position: absolute;
-    align-items: center;
     width: 100%;
     height: 60px;
     background-color: $main-color;
+    
+    .links{
+        display: flex;
+        flex-direction: row;
+        column-gap: 30px;
+        
+        p{
+            margin-top: 30px;
+        }
+
+    }
 }

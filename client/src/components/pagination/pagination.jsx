@@ -9,12 +9,13 @@ export const Pagination  = ({page,setPage,max}) =>{
         setPage(page - 1)
     }
 
-    console.log(max)
+
     return(
         <div>
             <button onClick={prevPage} disabled={page === 1}>
                 prev
             </button>
+            {}
             <button onClick={nextPage} disabled={ page === max}>
                 next  
             </button>
