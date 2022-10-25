@@ -18,7 +18,6 @@ export const Home = () =>{
 
     useEffect(()=>{
         dispatch(getCountries())
-        .then(setLoading(false))
         dispatch(getAllActivities())
     },[])
 
