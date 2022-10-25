@@ -12,7 +12,7 @@ export const SearchBar =()=>{
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const onMouseLeave = ()=>{
+    const handleClick = ()=>{
         if(country?.length > 0){
             dispatch(countryByName(country))
         }
@@ -30,16 +30,16 @@ export const SearchBar =()=>{
             if(countryDetail.name !== undefined){
                 navigate(`/detail/${countryDetail.id}`)
             }else{
-                
+
             }}
     }
 
     return (
         <div className="search">
             <input value={country} onChange={e => setCountry(e.target.value)} type="text"
-             onKeyDown={e=> KeyDown(e)} onMouseLeave={onMouseLeave} onKeyUp={e=>keyUp(e)}/>
+             onKeyDown={e=> KeyDown(e)} onKeyUp={e=>keyUp(e)}/>
         <Link to={`/detail/${countryDetail?.id}`}>
-            <button  disabled={ countryDetail.name === undefined }>buscar</button>
+            <button  disabled={ country.length < 3 } onclick={handleClick} >buscar</button>
         </Link>
         </div>)
 }
