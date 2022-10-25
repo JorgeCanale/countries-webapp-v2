@@ -15,8 +15,7 @@ export const Cards = ({countries})=>{
 
     const max = Math.ceil(Countries.length / countriesPerPage)
 
-    const data= useLocation()
-    console.log(data)
+
     return(
         <div className="cards">
             {
