@@ -13,13 +13,14 @@ export const SearchBar =()=>{
 
 
     const onHooverButton = ()=>{
-        if(country?.length > 0){dispatch(countryByName(country))}
+        if(country?.length > 0)dispatch(countryByName(country))
+        console.log(country)
     }
 
 
     return (
         <div className="search">
-            <input value={country} onChange={e => setCountry(e.target.value)} type="search"  />
+            <input value={country} onChange={e => setCountry(e.target.value)} type="text"  />
         <Link to={`/detail/${countryDetail?.id}`} state={countryDetail}>
             <button onMouseOver={onHooverButton} disabled={countryDetail.name === undefined}>buscar</button>
         </Link>
