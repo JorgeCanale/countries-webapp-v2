@@ -1,0 +1,23 @@
+.pagination{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+    text-align: center;
+    position: relative;
+
+    padding-left: 510px;
+    padding-bottom: 400px;
+
+    .page{
+        width: 50px;
+        text-align: center  ;
+    }
+
+    button{
+        height: 30px;
+
+    }
+
+
+}
