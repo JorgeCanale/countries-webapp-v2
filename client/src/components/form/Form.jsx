@@ -35,7 +35,7 @@ export const ActivityForm = () =>{
         <div className="formContainer">
         {path.pathname !== "/landing" ? <NavBar/>: <></>}
         <form onSubmit={e =>handleSubmit(e)}>
-                <input type="text" name="name" value={activity} onChange={e => setActivity(e.target.value)}
+                <input className="formInput" type="text" name="name" value={activity} onChange={e => setActivity(e.target.value)}
                 placeholder="ingresa el nombre" autoComplete="none" />
                 <select type="form-select" onChange={e =>setActivitySeason(e.target.value)}>
                     {['season','summer','autum','winter','spring'].map(season =>{
@@ -46,11 +46,11 @@ export const ActivityForm = () =>{
                 </select>
             <div>
                 <p className="tittle">duration</p>
-                <input type="float" value={activityDuration} onChange={e => setActivityDuration(e.target.value)}/>
+                <input className="formInput" type="float" value={activityDuration} onChange={e => setActivityDuration(e.target.value)}/>
             </div>
             <div>
                 <p className="tittle">difficulty</p>
-                <input type="range" min="1" max="5" step="1"  list="tickmarks"
+                <input className="formInput" type="range" min="1" max="5" step="1"  list="tickmarks"
                 onChange={e => setActivityDifficulty(e.target.value)}/>
                 <datalist id="tickmarks">
                    {['1','2','3','4','5'].map(num =>{
@@ -68,7 +68,7 @@ export const ActivityForm = () =>{
                         )
                     })}
                 </select>
-            <button type="submit">creat activity</button>
+            <button className="formButton" type="submit">creat activity</button>
         </form>
         </div>
     )
