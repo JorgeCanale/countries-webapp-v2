@@ -19,7 +19,7 @@ export  const Detail = () =>{
         
         <div className="detail">
             {data.pathname !== "/landing" ? <NavBar/>: <></>}
-            {country.id === undefined ? <h1>Loading</h1>:<div className="infoBackground">
+            {country.id === undefined ? <h1 className="loading">Loading...</h1>:<div className="infoBackground">
                 <img className="flag" src={`${country?.flags}`} alt="country flag"/>
                 <h1 className="name">{country?.name}</h1>     
                 <div className="infoContainer">               

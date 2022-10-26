@@ -18,10 +18,10 @@ export const SearchBar =()=>{
         if(country?.length > 0){
             dispatch(countryByName(country))
         }
-        if(countryDetail.id !== undefined){
-            navigate(`/detail/${countryDetail.id}`)
-        }else if(error){
+        if(error){
             navigate("/error")
+        }else if(countryDetail.id !== undefined){
+            navigate(`/detail/${countryDetail.id}`)
         }
     }
 
@@ -32,12 +32,11 @@ export const SearchBar =()=>{
     }
     
     const keyUp =(e)=>{
-
         if(e.keyCode === 13){
-            if(countryDetail.id !== undefined){
-                navigate(`/detail/${countryDetail.id}`)
-            }else if(error){
+            if(error){
                 navigate("/error")
+            }else if(countryDetail.id !== undefined){
+                navigate(`/detail/${countryDetail.id}`)
             }}
     }
 

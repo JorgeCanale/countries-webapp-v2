@@ -8,7 +8,6 @@ router.post('/post', async (req,res)=>{
     try {
         const {name,difficulty,duration,season,countries} = req.body
         let exist = await Activities.findAll({where:{name:name}})
-        console.log(exist)
         if(exist.length > 0) { 
             res.status(400).send("la actividad ya existe")
         }else{

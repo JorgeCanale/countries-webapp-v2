@@ -19,7 +19,6 @@ export const Pagination  = ({page,setPage,max}) =>{
 
     const onKeyDown = e =>{
         let val = parseInt(e.target.value)
-        console.log(val)
         if(e.keyCode === 13){
             setCurrentPage(parseInt(e.target.value))
             if(isNaN(val) || val < 1 || val > max){

@@ -5,7 +5,6 @@ import { GetAllCountries,GetOneCountry,FilterCountries, FilteredByAlphabeticalOr
 export const getCountries = () => {
     return async dispatch =>{
         const countries = (await axios.get(`/countries`)).data
-        console.log("actions ---->", countries);
         if(countries){
             dispatch(GetAllCountries(countries))
         }else{            
@@ -18,7 +17,6 @@ export const getCountries = () => {
 export const countryByName = (name) => {
     return async dispatch =>{
         const Country = (await axios.get(`/countries/country/${name}`)).data
-        console.log(Country);
         dispatch(GetOneCountry(Country))
     }
 }

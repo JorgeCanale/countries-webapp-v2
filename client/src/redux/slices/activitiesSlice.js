@@ -12,7 +12,6 @@ export const activitiesSlice = createSlice({
         GetAllActivities:(state, action)=>{
             if(typeof action.payload === "string"){
                 state.error = action.payload
-                console.log(typeof state.error);
             }else{
                 state.activities = action.payload
             }

@@ -7,6 +7,13 @@
     background-size: cover;
     width: 100%;
     height: 110vh;
+
+    .loading{
+        position: absolute;
+        margin-left: 600px;
+        align-self: center;
+
+    }
     .infoBackground{
         position: inherit;
         background-image: url("../../assets/detail-bg.png");

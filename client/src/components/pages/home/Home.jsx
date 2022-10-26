@@ -25,7 +25,6 @@ export const Home = () =>{
     const path = useLocation()
 
 
-    console.log(error)
     return(
 
         <div className="HomeContainer">
