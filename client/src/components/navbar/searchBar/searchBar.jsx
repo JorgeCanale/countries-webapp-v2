@@ -12,7 +12,7 @@ export const SearchBar =()=>{
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const handleClick = ()=>{
+    const onMouseOver = ()=>{
         if(country?.length > 0){
             dispatch(countryByName(country))
         }
@@ -39,7 +39,7 @@ export const SearchBar =()=>{
             <input value={country} onChange={e => setCountry(e.target.value)} type="text"
              onKeyDown={e=> KeyDown(e)} onKeyUp={e=>keyUp(e)}/>
         <Link to={`/detail/${countryDetail?.id}`}>
-            <button  disabled={ country.length < 3 } onclick={handleClick} >buscar</button>
+            <button  disabled={ country.length < 3 } onMouseOver={onMouseOver}>search</button>
         </Link>
         </div>)
 }

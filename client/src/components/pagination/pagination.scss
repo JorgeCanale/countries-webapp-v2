@@ -1,22 +1,26 @@
 .pagination{
     display: flex;
+    flex-direction: row;
     align-items: center;
     align-content: center;
+    text-align: center;
     gap: 30px;
     text-align: center;
-    position: relative;
-
+    position:inherit;
     padding-left: 510px;
     padding-bottom: 400px;
 
     .page{
-        width: 50px;
+        width: 30px;
         text-align: center  ;
     }
 
     button{
         height: 30px;
+    }
 
+    p{
+        flex-shrink: 0;
     }
 
 

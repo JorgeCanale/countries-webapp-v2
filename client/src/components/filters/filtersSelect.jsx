@@ -73,14 +73,14 @@ export const FilterSelector= ()=>{
     }
     return(
         <div className="filters">
-            <select onChange={(e)=>handleChange(e)}>
+            <select className="population" onChange={(e)=>handleChange(e)}>
              {["Population","Ascendente","Descendente"].map(filter =>{
                     return(
                          <option value={filter}>{filter}</option>)
             })}
             </select>
   
-            <select onChange={(e)=> combinadeHandler(e)}>
+            <select className="alphabetical" onChange={(e)=> combinadeHandler(e)}>
                     {["Alphabetical","Ascendente","Descendente"].map((o) =>{
                         return(
                             <option value={o}>{o}</option>
@@ -89,7 +89,7 @@ export const FilterSelector= ()=>{
             </select>
 
 
-            <select onChange={(e)=> handleContinetsFilter(e)}>
+            <select className="continents" onChange={(e)=> handleContinetsFilter(e)}>
                 {["Continents","Oceania","Asia", "North America","South America",
                 "Africa","Europe","Antartica"].map( op =>{
                     return(<option value={op}>{op}</option>)
@@ -97,7 +97,7 @@ export const FilterSelector= ()=>{
                 }
             </select>
 
-            <select onChange={e => handleActivities(e)}>
+            <select className="activities" onChange={e => handleActivities(e)}>
                 <option>Activities</option>
                 {activities  &&  activities.map(activity =>{
                   return (<option value={activity.name}>{activity.name}</option>)

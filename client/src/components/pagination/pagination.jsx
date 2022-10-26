@@ -38,7 +38,7 @@ export const Pagination  = ({page,setPage,max}) =>{
                 prev
             </button>
             <input className="page" value={currentPage} autoComplete="off" onKeyDown={e=>onKeyDown(e)} onChange={e=>setCurrentPage(e.target.value)}/>
-             <p> of {max}</p>
+             <p>{`of   ${max}`}</p>
             <button className="next" onClick={nextPage} disabled={ page === max}>
                 next  
             </button>
