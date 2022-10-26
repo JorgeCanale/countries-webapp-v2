@@ -2,10 +2,10 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    padding-left: 1000px;
+    margin-left: 1000px;
     column-gap: 20px;
-    padding-top: 20px;
-
+    margin-top: 20px;
+    
     input{
         border: 2px;
         border-radius: 11px;
@@ -13,6 +13,11 @@
 
     button{
         position: absolute;
+    }
+
+    .searchButton{
+        margin-left: 160px;
+        margin-bottom: 20px;
     }
 
 }

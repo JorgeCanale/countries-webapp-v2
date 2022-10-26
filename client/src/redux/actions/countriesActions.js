@@ -5,13 +5,20 @@ import { GetAllCountries,GetOneCountry,FilterCountries, FilteredByAlphabeticalOr
 export const getCountries = () => {
     return async dispatch =>{
         const countries = (await axios.get(`/countries`)).data
-        dispatch(GetAllCountries(countries))
+        console.log("actions ---->", countries);
+        if(countries){
+            dispatch(GetAllCountries(countries))
+        }else{            
+            let error = "Error al conectar con el servidor"
+            dispatch(GetAllCountries(error))
+        }
     }
 }
 
 export const countryByName = (name) => {
     return async dispatch =>{
         const Country = (await axios.get(`/countries/country/${name}`)).data
+        console.log(Country);
         dispatch(GetOneCountry(Country))
     }
 }

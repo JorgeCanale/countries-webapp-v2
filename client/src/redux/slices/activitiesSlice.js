@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     activities: [],
+    error: "",
 }
 
 export const activitiesSlice = createSlice({
@@ -9,7 +10,12 @@ export const activitiesSlice = createSlice({
     initialState,
     reducers:{
         GetAllActivities:(state, action)=>{
-            state.activities = action.payload
+            if(typeof action.payload === "string"){
+                state.error = action.payload
+                console.log(typeof state.error);
+            }else{
+                state.activities = action.payload
+            }
         }
     }
 })

@@ -9,7 +9,7 @@ router.get('/', async(req,res)=>{
      if(allCountries !== undefined ){
         res.send(allCountries)
     }else{
-        res.send('Error 404 paises no encontrados 😥')
+        res.status(404).send('Error 404 paises no encontrados 😥')
      }
 })
 
@@ -21,7 +21,7 @@ router.get('/country/:country', async(req,res)=>{
         res.send(countryByName)
 
     } catch (error) {
-        res.send('Error 404 Pais no encontraso 😥')
+        res.send('Error 404 country not found 😥')
     }
 })
 

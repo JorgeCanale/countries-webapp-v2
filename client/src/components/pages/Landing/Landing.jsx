@@ -1,15 +1,20 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 import "./Landing.scss"
 
 export const LandingPage = ()=>{    
+
+    const navigate = useNavigate()
+    
+    const clickHandler=()=>{
+        navigate("/home")
+    }
+
     return(
         <div className="LandingContainer">
-            <h1>Find your place</h1>
-                <Link to='/home'>
-                     <button> go to the home choom</button>
-                 </Link>
+            <h1 className="tittle">Find your place</h1>
+            <button onClick={clickHandler}> go to the home choom</button>
         </div>
     )
 }

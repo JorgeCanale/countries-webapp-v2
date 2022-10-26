@@ -26,7 +26,7 @@ router.get('/', async (req,res)=>{
        if(allActivities !== undefined){ 
         res.status(200).send(allActivities)
     }else{
-        res.status(404).send(undefined)
+        res.status(404).send('Activities not found 😥')
     }
     } catch (error) {
         res.send(error)

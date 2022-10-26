@@ -4,6 +4,7 @@ const initialState = {
     countries: [],
     backup: [],
     Country: [],
+    error: null,
 }
 
 export const countriesSlice = createSlice({
@@ -11,11 +12,19 @@ export const countriesSlice = createSlice({
     initialState,
     reducers:{
         GetAllCountries: (state, action)=>{
-            state.countries = action.payload
-            state.backup = action.payload
+            if(typeof action.payload === "string"){
+                state.error = action.payload
+            }else{
+                state.countries = action.payload
+                state.backup = action.payload
+            }
         },
         GetOneCountry: (state, action) =>{
-            state.Country = action.payload
+            if(typeof action.payload === "string"){
+                state.error = action.payload
+            }else{
+                state.Country = action.payload
+            }
         },
         FilterCountries: (state, action)=>{
             state.countries = action.payload
