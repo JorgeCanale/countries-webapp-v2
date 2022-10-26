@@ -9,17 +9,17 @@ export  const Detail = () =>{
     let data = useLocation()
     const country = useSelector(store=>store.countries.Country)
     let languages = []
-
+   
 
     if(country){
         for(let key in country?.languages) languages.push(country.languages[key])
     }
 
-    console.log(languages)
     return (
+        
         <div className="detail">
             {data.pathname !== "/landing" ? <NavBar/>: <></>}
-            <div className="infoBackground">
+            {country.id === undefined ? <h1>Loading</h1>:<div className="infoBackground">
                 <img className="flag" src={`${country?.flags}`} alt="country flag"/>
                 <h1 className="name">{country?.name}</h1>     
                 <div className="infoContainer">               
@@ -47,7 +47,7 @@ export  const Detail = () =>{
                         }
                     </div>
                 </div>
-                </div>
+                </div>}
         </div>
     )
 }
