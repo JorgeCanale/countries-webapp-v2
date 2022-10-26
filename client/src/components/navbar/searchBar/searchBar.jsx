@@ -46,7 +46,7 @@ export const SearchBar =()=>{
     return (
         <div className="search">
             <input value={country} onChange={e => setCountry(e.target.value)} type="text"
-             onKeyDown={e=> keyDown(e)} onKeyUp={e=>keyUp(e)}/>
+             onKeyDown={e=> keyDown(e)} onKeyUp={e=>keyUp(e)} onMouseLeave={onMouseOver}/>
             <button className="searchButton" disabled={ country.length < 3 } onMouseOver={onMouseOver} onClick={e=>handleClick(e)}>search</button>
         </div>)
 }
