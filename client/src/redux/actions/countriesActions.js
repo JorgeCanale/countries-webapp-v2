@@ -1,5 +1,6 @@
 import axios from "axios"
-import { GetAllCountries,GetOneCountry,FilterCountries, FilteredByAlphabeticalOrder, FilteredByPopulation, FilteredByActivities } from "../slices/countriesSlice"
+import { GetAllCountries,GetOneCountry,FilterCountries, FilteredByAlphabeticalOrder,
+     FilteredByPopulation, FilteredByActivities,CleanErrorState } from "../slices/countriesSlice"
 
 
 export const getCountries = () => {
@@ -57,5 +58,11 @@ export const filteredByPopulation = (order)=>{
 export const filteredByActivities = (activity) =>{
     return async dispatch =>{
         dispatch(FilteredByActivities(activity))
+    }
+}
+
+export const cleanErrorState = ()=>{
+    return async dispatch=>{
+        dispatch(CleanErrorState(undefined))
     }
 }

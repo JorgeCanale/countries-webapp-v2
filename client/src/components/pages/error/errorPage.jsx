@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useNavigate} from "react-router-dom"
+import { cleanErrorState } from "../../../redux/actions/countriesActions";
 import "./errorPage.scss"
 
 export const  ErrorPage =()=>{
@@ -8,8 +9,9 @@ export const  ErrorPage =()=>{
     const error = useSelector(store=> store.countries.error)
 
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     const handleClick =()=>{
+        dispatch(cleanErrorState())
         navigate("/home")
     }
 

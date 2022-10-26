@@ -51,10 +51,13 @@ export const countriesSlice = createSlice({
         FilteredByActivities:(state,action) =>{
             let filtered = state.countries.filter((country)=> country.activities && country.activities.map((activity)=> activity?.name).includes(action.payload))
             state.countries = filtered
+        },
+        CleanErrorState: (state,action)=>{
+            state.error = action.payload
         }
     }
 })
 
-export const {GetAllCountries, GetOneCountry, FilterCountries, FilteredByAlphabeticalOrder, FilteredByPopulation, FilteredByActivities} = countriesSlice.actions
+export const {GetAllCountries, GetOneCountry, FilterCountries, FilteredByAlphabeticalOrder, FilteredByPopulation, FilteredByActivities,CleanErrorState} = countriesSlice.actions
 
 export default countriesSlice.reducer
