@@ -30,9 +30,8 @@ export const Home = () =>{
         <div className="HomeContainer">
             <div className="HomeBackground" />
             {path.pathname !== "/landing" ? <NavBar/>: <></>}
-            {loading && <Loading />}
             <FilterSelector />
-            <Cards countries={Countries}/>
+            {Countries === undefined ? <Loading />:<Cards countries={Countries}/>}
         </div>
     )
 }
