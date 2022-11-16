@@ -14,7 +14,7 @@ export const LandingPage = ()=>{
     return(
         <div className="LandingContainer">
             <h1 className="tittle">Find your place</h1>
-            <button onClick={clickHandler}> go to the home choom</button>
+            <button onClick={clickHandler}>start</button>
         </div>
     )
 }

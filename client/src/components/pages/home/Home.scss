@@ -1,14 +1,19 @@
 .HomeContainer{
     position: absolute;
     width: 100%;
+    align-items: center;
+    align-content: center;
     .HomeBackground{
     z-index: -1;
     width:100%;
-    height:100%;;
+    height:230vh;
     background-image: url("../../../assets/home-background.jpg");
     background-size: cover;
     background-repeat: no-repeat; 
     position: inherit;
-}
+    }
+
+
+
 }
 

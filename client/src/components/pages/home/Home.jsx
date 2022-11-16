@@ -1,14 +1,14 @@
 import React from "react";
-import './Home.scss'
 import { useSelector, useDispatch } from "react-redux";
 import { Cards } from "../../countriesCards/Cards";
 import { FilterSelector } from "../../filters/filtersSelect";
 import { useEffect, useState } from "react";
 import { getCountries } from "../../../redux/actions/countriesActions";
 import { getAllActivities } from "../../../redux/actions/activitiesAction";
-import { useNavigate, useLocation} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import {NavBar} from "../../navbar/navbar"
 import { Loading } from "../../Loaders/Loading";
+import './Home.scss'
 
 
 export const Home = () =>{
@@ -20,6 +20,7 @@ export const Home = () =>{
     useEffect(()=>{
         dispatch(getCountries())
         dispatch(getAllActivities())
+        setLoading(false)
     },[])
 
     const path = useLocation()
@@ -31,7 +32,7 @@ export const Home = () =>{
             <div className="HomeBackground" />
             {path.pathname !== "/landing" ? <NavBar/>: <></>}
             <FilterSelector />
-            {Countries === undefined ? <Loading />:<Cards countries={Countries}/>}
+            {Countries.length > 0 ? <Cards countries={Countries}/> : <Loading className="Loading" /> }
         </div>
     )
 }
