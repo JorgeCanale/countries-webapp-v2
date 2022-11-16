@@ -1,34 +1,42 @@
 import React,{useState} from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useLocation, Navigate } from "react-router-dom";
 import { NavBar } from "../navbar/navbar";
 import { Loading } from "../Loaders/Loading";
+import { countryById } from "../../redux/actions/countriesActions";
 import "./detail.scss"
 
 export  const Detail = () =>{
 
     let data = useLocation()
     const country = useSelector(store=>store.countries.Country)
-    const [error,setError]= useState(false)
+    const [error,setError]= useState(0)
     let languages = []
+    const dispatch = useDispatch()
 
     if(country){
         for(let key in country?.languages) languages.push(country.languages[key])
     }else{
             
     }
+    
+    const id = data.pathname.slice(-3)
 
-    setTimeout(()=>{
-        if(country?.length < 1){
-            setError(true)
-        }
-    },"5000")
+
+    if(country === null){
+        dispatch(countryById(id))
+        console.log(country)
+    }
+
+
+
+
 
     return (
         
         <div className="detail">
             {data.pathname !== "/landing" ? <NavBar/>: <></>}
-            {country.id === undefined ?  <Loading /> : <div className="infoBackground">
+            {country?.id === undefined ?  <Loading /> : <div className="infoBackground">
                 <img className="flag" src={`${country?.flags}`} alt="country flag"/>
                 <h1 className="name">{country?.name}</h1>     
                 <div className="infoContainer">               
@@ -38,7 +46,7 @@ export  const Detail = () =>{
                         <h3 className="tittle">Area: </h3>
                         {country?.languages !== null ? <h3 className="tittle">Population: </h3> :<></>}
                         <h3 className="languages">Languages</h3>
-                        {country?.activities !== undefined && country.activities.length > 0 ?
+                        {country?.activities !== undefined && country?.activities.length > 0 ?
                         <h3 className="activities">Activities</h3>: <></>}
                     </div>
                     <div className="rightSideBar">

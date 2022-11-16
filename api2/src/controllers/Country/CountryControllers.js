@@ -64,7 +64,17 @@ const getCountryByName = async(name) =>{
     return country[0].dataValues
 }
 
+const getCountryById = async(id)=>{
+    const country = await Country.findOne({where:{
+        id: id
+    },
+    include: Activities})
+    
+    return country[0].dataValues
+}
+
 module.exports  = {
     getAllCountries,
-    getCountryByName
+    getCountryByName,
+    getCountryById
 }

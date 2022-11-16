@@ -22,6 +22,13 @@ export const countryByName = (name) => {
     }
 }
 
+export const countryById =(id)=>{
+    return async dispatch =>{
+        const countryByIdd = (await axios.get(`/countries/country/${id}`)).data
+        dispatch(GetOneCountry(countryByIdd))
+    }
+}
+
 export const getFilterByContinents = (continent) => {
     return async dispatch =>{
         const filtered = (await axios.get(`/filters/continents/${continent}`)).data

@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const {getAllCountries, getCountryByName} = require('../controllers/Country/CountryControllers')
+const {getAllCountries, getCountryByName, getCountryById} = require('../controllers/Country/CountryControllers')
 
 const router = Router()
 
@@ -22,6 +22,17 @@ router.get('/country/:country', async(req,res)=>{
 
     } catch (error) {
         res.send('Error 404 country not found 😥')
+    }
+})
+
+router.get('/country/:id', async(req,res)=>{
+    try{
+        const{id} = req.params
+        const countryById = getCountryById(id)
+        res.send(countryById) 
+
+    }catch(error){
+        res.send(error)
     }
 })
 
