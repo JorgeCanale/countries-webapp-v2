@@ -36,6 +36,7 @@ export const SearchBar =()=>{
             if(error){
                 navigate("/error")
             }else if(countryDetail.id !== undefined){
+                setCountry('')
                 navigate(`/detail/${countryDetail.id}`)
             }}
     }

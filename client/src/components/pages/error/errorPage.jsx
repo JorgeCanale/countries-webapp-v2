@@ -20,7 +20,7 @@ export const  ErrorPage =()=>{
             <video src="https://videos.pond5.com/3d-stylized-world-map-flying-footage-084821302_main_xxl.mp4" autoPlay muted loop />
             <div className="error">
                 <h1>
-                {error ? error: "something went wrong mate 😥"}
+                {error ? error: "something went wrong  😥"}
                 </h1>
                 <button onClick={handleClick}>Home Page</button>
             </div>
