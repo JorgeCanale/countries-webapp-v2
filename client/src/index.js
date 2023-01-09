@@ -10,7 +10,7 @@ import {store} from "./redux/index";
 import dotenv from "dotenv";
 dotenv.config();
 
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
+axios.defaults.baseURL = process.env.REACT_APP_API || "https://countries-web-app-api-v2-production.up.railway.app";
 
 ReactDOM.render(
   <React.StrictMode>
